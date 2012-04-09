@@ -2,11 +2,17 @@
 <html>
 <head>
 <title>Carousel demo</title>
+<style>
+#images {
+  width: 300px;
+}
+</style>
+<link rel='stylesheet' href='carousel.css' />
 <script src='carousel.js'></script>
 <script>
 window.onload = function() {
-  var carousel = new Carousel();
-  carousel.initOnId('images')
+  var carousel = new Carousel('images');
+  carousel.init();
 }
 </script>
 </head>
@@ -14,14 +20,15 @@ window.onload = function() {
 
 <h1>Carousel Demo</h1>
 <div id='images'>
-  <img src='http://placekitten.com/100/100'>
-  <img src='http://placekitten.com/100/101'>
-  <img src='http://placekitten.com/100/100'>
-  <img src='http://placekitten.com/100/101'>
-  <img src='http://placekitten.com/100/100'>
-  <img src='http://placekitten.com/100/101'>
-  <img src='http://placekitten.com/100/100'>
-  <img src='http://placekitten.com/100/101'>
+  <img src='http://placekitten.com/100/100' alt='cat 1' height='100' width='100'>
+  <img src='http://placekitten.com/100/101' alt='cat 2' height='100' width='100'>
+  <img src='http://placekitten.com/100/100' alt='cat 3' height='100' width='100'>
+  <img src='http://placekitten.com/100/101' alt='cat 4' height='100' width='100'>
+  <img src='http://placekitten.com/100/100' alt='cat 5' height='100' width='100'>
+  <img src='http://placekitten.com/100/101' alt='cat 6' height='100' width='100'>
+  <img src='http://placekitten.com/100/100' alt='cat 7' height='100' width='100'>
+  <img src='http://placekitten.com/100/101' alt='cat 8' height='100' width='100'>
+  <img src='http://placekitten.com/100/100' alt='cat 9' height='100' width='100'>
 </div>
 
 </body>
