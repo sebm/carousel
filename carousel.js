@@ -2,6 +2,7 @@
   window.Carousel = function(id) {
     var wrapper = document.createElement('div');
     var outer = document.getElementById(id)
+    var outerWidth = parseInt(window.getComputedStyle(outer).width, 10);
     var currentPage;
     var numberPages;
 
@@ -26,10 +27,10 @@
       }
       outer.appendChild(wrapper);
       wrapper.style.width = elementsWidth + 'px';
+      wrapper.style.left = '0px';
       outer.style.overflow = 'hidden';
 
       currentPage = 1;
-      var outerWidth = parseInt(window.getComputedStyle(outer).width, 10);
 
       numberPages = Math.ceil(elementsWidth / outerWidth);
     };
@@ -45,20 +46,36 @@
       outer.appendChild(nextButton);
 
       prevButton.addEventListener('click', function () {
-        alert('prev!');
         prevTrigger();
       });
 
       nextButton.addEventListener('click', function () {
-        alert('next!');
         nextTrigger();
       });
     };
 
     var nextTrigger = function() {
+      if (currentPage === numberPages) {
+        return;
+      }
+
+      var position = parseInt(wrapper.style.left, 10);
+      position = position - outerWidth;
+      wrapper.style.left = position + 'px';
+
+      currentPage++;
     };
 
     var prevTrigger = function() {
+      if (currentPage === 1) {
+        return;
+      }
+
+      var position = parseInt(wrapper.style.left, 10);
+      position = position + outerWidth;
+      wrapper.style.left = position + 'px';
+
+      currentPage--;
     };
 
     return {
