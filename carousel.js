@@ -1,4 +1,4 @@
-(function(window, undefined) {
+(function(window, document, undefined) {
   window.Carousel = function(id) {
     var wrapper = document.createElement('div');
     var outer = document.getElementById(id)
@@ -85,4 +85,4 @@
     }
 
   };
-})(window, undefined);
+})(window, document, undefined);
